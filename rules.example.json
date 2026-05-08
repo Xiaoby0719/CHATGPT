@@ -1,0 +1,66 @@
+{
+  "rules": [
+    {
+      "name": "claim_daily_sign_in",
+      "when_all": {
+        "game": "yihuan",
+        "screen": "main",
+        "daily_sign_in_available": true
+      },
+      "do": [
+        "focus_game_window",
+        "open_daily_panel",
+        "claim_sign_in_reward",
+        "close_panel"
+      ],
+      "cooldown_sec": 60
+    },
+    {
+      "name": "claim_mail_reward",
+      "when_all": {
+        "game": "yihuan",
+        "screen": "main",
+        "mail_reward_available": true
+      },
+      "do": [
+        "focus_game_window",
+        "open_daily_panel",
+        "claim_mail_reward",
+        "close_panel"
+      ],
+      "cooldown_sec": 60
+    },
+    {
+      "name": "run_quick_bounty",
+      "when_all": {
+        "game": "yihuan",
+        "screen": "main",
+        "stamina_enough": true,
+        "bounty_remaining": true
+      },
+      "do": [
+        "focus_game_window",
+        "open_bounty_board",
+        "start_quick_bounty",
+        "collect_bounty_reward",
+        "close_panel"
+      ],
+      "cooldown_sec": 20
+    },
+    {
+      "name": "buy_daily_stamina",
+      "when_all": {
+        "game": "yihuan",
+        "screen": "main",
+        "stamina_purchase_left": true
+      },
+      "do": [
+        "focus_game_window",
+        "open_stamina_shop",
+        "buy_stamina_once",
+        "close_panel"
+      ],
+      "cooldown_sec": 120
+    }
+  ]
+}
